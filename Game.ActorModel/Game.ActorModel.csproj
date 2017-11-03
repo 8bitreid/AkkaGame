@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Messages\AttackPlayerMessage.cs" />
+    <Compile Include="Messages\JoinGameMessage.cs" />
+    <Compile Include="Messages\PlayerHealthChangedMessage.cs" />
+    <Compile Include="Messages\PlayerStatusMessage.cs" />
+    <Compile Include="Messages\RefreshPlayerStatusMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
