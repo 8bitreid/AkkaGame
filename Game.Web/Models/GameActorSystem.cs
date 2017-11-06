@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Akka.Actor;
 using Game.ActorModel.Actors;
 
@@ -13,7 +10,7 @@ namespace Game.Web.Models
 
         public static void Create()
         {
-            _actorSystem = Akka.Actor.ActorSystem.Create("GameSystem");
+            _actorSystem = ActorSystem.Create("GameSystem");
             ActorReferences.GameController = _actorSystem.ActorOf<GameControllerActor>();
 
         }
