@@ -1,9 +1,10 @@
 ﻿using Akka.Actor;
 using Game.ActorModel.Messages;
 using Microsoft.AspNet.SignalR;
+
 namespace Game.Web.Models
 {
-    public class GameHub
+    public class GameHub : Hub
     {
         public void JoinGame(string playerName)
         {

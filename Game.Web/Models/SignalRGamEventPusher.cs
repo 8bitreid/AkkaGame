@@ -10,10 +10,7 @@ namespace Game.Web.Models
 
         static SignalRgamEventPusher()
         {
-            //TODO should this be <GameHub> or "GameHub" ...
-            //_gameHubContext = GlobalHost.ConnectionManager.GetHubContext<GameHub>();
-            _gameHubContext = GlobalHost.ConnectionManager.GetHubContext("GameHub");
-
+            _gameHubContext = GlobalHost.ConnectionManager.GetHubContext<GameHub>();
         }
         public void PlayerJoined(string playerName, int playerHealth)
         {
