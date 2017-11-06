@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actors\GameControllerActor.cs" />
+    <Compile Include="Actors\PlayerActor.cs" />
     <Compile Include="Messages\AttackPlayerMessage.cs" />
     <Compile Include="Messages\JoinGameMessage.cs" />
     <Compile Include="Messages\PlayerHealthChangedMessage.cs" />
@@ -56,5 +58,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
