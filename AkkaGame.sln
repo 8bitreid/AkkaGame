@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.ActorModel", "Game.Act
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Web", "Game.Web\Game.Web.csproj", "{27BBFF89-0E76-4608-9F72-55C00D128B23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.State", "Game.State\Game.State.csproj", "{FBFBCB6F-5E8C-4239-9AC9-2F18A7857483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{27BBFF89-0E76-4608-9F72-55C00D128B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27BBFF89-0E76-4608-9F72-55C00D128B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27BBFF89-0E76-4608-9F72-55C00D128B23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBFBCB6F-5E8C-4239-9AC9-2F18A7857483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFBCB6F-5E8C-4239-9AC9-2F18A7857483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFBCB6F-5E8C-4239-9AC9-2F18A7857483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFBCB6F-5E8C-4239-9AC9-2F18A7857483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
