@@ -49,6 +49,18 @@
     <Reference Include="Akka, Version=1.0.4.12, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Akka.1.0.4\lib\net45\Akka.dll</HintPath>
     </Reference>
+    <Reference Include="Akka.Remote, Version=1.0.4.12, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.Remote.1.0.4\lib\net45\Akka.Remote.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers, Version=2.4.1.521, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.521\lib\net40\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers.Serialization, Version=2.4.1.521, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.521\lib\net40\Google.ProtocolBuffers.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Helios, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helios.1.4.1\lib\net45\Helios.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
@@ -174,17 +186,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CHANGES.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="licenses\license.txt" />
+    <Content Include="licenses\protoc-license.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="protos\tutorial\addressbook.proto" />
+    <Content Include="protos\google\protobuf\descriptor.proto" />
+    <Content Include="protos\google\protobuf\csharp_options.proto" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

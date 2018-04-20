@@ -35,7 +35,7 @@
     <script>
         var gameHub = $.connection.gameHub;
 
-        gameHub.client.playerJoined = function (playerName, health) {
+        gameHub.client.playerJoined = function(playerName, health) {
             var isMe = playerName === vm.newPlayerName();
             if (isMe) {
                 vm.thisPlayer().playerName(playerName);
@@ -43,7 +43,7 @@
                 vm.isJoined(true);
             } else {
                 var playerExistInList = ko.utils.arrayFirst(vm.otherPlayers(),
-                    function (player) {
+                    function(player) {
                         return playerName === player.playerName();
                     });
                 if (!playerExistInList) {
@@ -51,7 +51,7 @@
                 }
             }
         }
-        gameHub.client.updatePlayerHealth = function (playerName, health) {
+        gameHub.client.updatePlayerHealth = function(playerName, health) {
             var isMe = playerName === vm.newPlayerName();
             if (isMe) {
                 // update own health.
@@ -66,15 +66,22 @@
             }
         }
 
+        $.connection.hub.disconnected(function() {
+            setTimeout(function() {
+                    $.connection.hub.start();
+                },
+                5000);
+        });
+
         $.connection.hub.start();
 
-        var PlayerViewModel = function (playerName, health) {
+        var PlayerViewModel = function(playerName, health) {
             var self = this;
-            self.attack = function () {
+            self.attack = function() {
                 gameHub.server.attack(self.playerName());
             }
 
-            self.changeHealth = function (newHealth) {
+            self.changeHealth = function(newHealth) {
                 self.health(newHealth);
                 if (newHealth <= 0) {
                     self.isAlive(false);
@@ -86,19 +93,25 @@
             self.changeHealth(health);
         }
 
-        var GameViewModel = function () {
+        var GameViewModel = function() {
             var self = this;
 
             self.newPlayerName = ko.observable('');
             self.isJoined = ko.observable(false);
 
             self.thisPlayer = ko.observable(new PlayerViewModel('', NaN));
-            self.otherPlayers = ko.observableArray();
 
-            self.joinGame = function () {
-                gameHub.server.joinGame(self.newPlayerName());
-            }
+            self.otherPlayers = ko.observableArray().extend({
+                rateLimit: {
+                    timeout: 500,
+                    method: "notifyWhenChangesStop"
+                }
+        });
+
+        self.joinGame = function() {
+            gameHub.server.joinGame(self.newPlayerName());
         }
+    }
 
         var vm = new GameViewModel();
         ko.applyBindings(vm);
